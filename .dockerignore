@@ -1,0 +1,10 @@
+.git
+__pycache__
+*.py[cod]
+*.onnx
+*.onnx.data
+*.torchscript
+.env
+.venv
+venv/
+*.md
