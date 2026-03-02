@@ -1,5 +1,5 @@
 [phases.setup]
-nixPkgs = ["python310", "gcc", "libxcb", "libX11", "libXext", "libXrender", "libSM", "libICE", "glib", "ffmpeg"]
+nixPkgs = ["python310", "gcc", "libGL", "glib", "xorg.libxcb", "xorg.libX11", "xorg.libXext", "xorg.libXrender", "libSM", "libICE", "ffmpeg"]
 
 [phases.install]
-cmds = ["pip install -r requirements.txt"]
+cmds = ["pip install --upgrade pip", "pip install -r requirements.txt"]
