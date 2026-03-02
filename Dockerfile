@@ -13,11 +13,13 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 WORKDIR /app
 
+# Install CPU-only PyTorch first (must use PyTorch's own wheel index)
+RUN pip install --no-cache-dir torch torchvision \
+    --extra-index-url https://download.pytorch.org/whl/cpu
+
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
-
-EXPOSE $PORT
 
 CMD gunicorn -w 2 -k uvicorn.workers.UvicornWorker main:app --bind 0.0.0.0:${PORT:-8000} --timeout 120
