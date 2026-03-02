@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+*$py.class
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.git/
+Weights/*.onnx
+Weights/*.onnx.data
+Weights/*.torchscript
+# Keep .pt files as they are used by YOLO
